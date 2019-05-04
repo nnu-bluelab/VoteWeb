@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5B0E80E-1059-4F44-A833-F186B340A299}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VoteWeb</RootNamespace>
+    <AssemblyName>VoteWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.3.7\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\1.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\112.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\2.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\4.png" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\6.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\7.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\8.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\Admin.png" />
+    <Content Include="WebSite\%24RNCCLF0\Pictures\shanghetu.jpg" />
+    <Content Include="WebSite\%24RNCCLF0\Videos\1.mp4" />
+    <Content Include="WebSite\css\animate.min.css" />
+    <Content Include="WebSite\css\bootstrap.min.css" />
+    <Content Include="WebSite\css\bootstrap.min14ed.css" />
+    <Content Include="WebSite\css\demo\webuploader-demo.min.css" />
+    <Content Include="WebSite\css\font-awesome.min93e3.css" />
+    <Content Include="WebSite\css\login.min.css" />
+    <Content Include="WebSite\css\patterns\header-profile-skin-1.png" />
+    <Content Include="WebSite\css\patterns\header-profile-skin-3.png" />
+    <Content Include="WebSite\css\patterns\header-profile.png" />
+    <Content Include="WebSite\css\patterns\shattered.png" />
+    <Content Include="WebSite\css\plugins\awesome-bootstrap-checkbox\awesome-bootstrap-checkbox.css" />
+    <Content Include="WebSite\css\plugins\blueimp\css\blueimp-gallery.min.css" />
+    <Content Include="WebSite\css\plugins\blueimp\img\error.png" />
+    <Content Include="WebSite\css\plugins\blueimp\img\error.svg" />
+    <Content Include="WebSite\css\plugins\blueimp\img\loading.gif" />
+    <Content Include="WebSite\css\plugins\blueimp\img\play-pause.png" />
+    <Content Include="WebSite\css\plugins\blueimp\img\play-pause.svg" />
+    <Content Include="WebSite\css\plugins\blueimp\img\video-play.png" />
+    <Content Include="WebSite\css\plugins\blueimp\img\video-play.svg" />
+    <Content Include="WebSite\css\plugins\bootstrap-table\bootstrap-table.min.css" />
+    <Content Include="WebSite\css\plugins\chosen\chosen-sprite%402x.png" />
+    <Content Include="WebSite\css\plugins\chosen\chosen-sprite.png" />
+    <Content Include="WebSite\css\plugins\chosen\chosen.css" />
+    <Content Include="WebSite\css\plugins\clockpicker\clockpicker.css" />
+    <Content Include="WebSite\css\plugins\codemirror\ambiance.css" />
+    <Content Include="WebSite\css\plugins\codemirror\codemirror.css" />
+    <Content Include="WebSite\css\plugins\colorpicker\css\bootstrap-colorpicker.min.css" />
+    <Content Include="WebSite\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha-horizontal.png" />
+    <Content Include="WebSite\css\plugins\colorpicker\img\bootstrap-colorpicker\alpha.png" />
+    <Content Include="WebSite\css\plugins\colorpicker\img\bootstrap-colorpicker\hue-horizontal.png" />
+    <Content Include="WebSite\css\plugins\colorpicker\img\bootstrap-colorpicker\hue.png" />
+    <Content Include="WebSite\css\plugins\colorpicker\img\bootstrap-colorpicker\saturation.png" />
+    <Content Include="WebSite\css\plugins\cropper\cropper.min.css" />
+    <Content Include="WebSite\css\plugins\datapicker\datepicker3.css" />
+    <Content Include="WebSite\css\plugins\dataTables\dataTables.bootstrap.css" />
+    <Content Include="WebSite\css\plugins\dropzone\basic.css" />
+    <Content Include="WebSite\css\plugins\dropzone\dropzone.css" />
+    <Content Include="WebSite\css\plugins\footable\fonts\footable.svg" />
+    <Content Include="WebSite\css\plugins\footable\footable.core.css" />
+    <Content Include="WebSite\css\plugins\fullcalendar\fullcalendar.css" />
+    <Content Include="WebSite\css\plugins\fullcalendar\fullcalendar.print.css" />
+    <Content Include="WebSite\css\plugins\iCheck\custom.css" />
+    <Content Include="WebSite\css\plugins\iCheck\green%402x.png" />
+    <Content Include="WebSite\css\plugins\iCheck\green.png" />
+    <Content Include="WebSite\css\plugins\images\sort_asc.png" />
+    <Content Include="WebSite\css\plugins\images\sort_desc.png" />
+    <Content Include="WebSite\css\plugins\images\sprite-skin-flat.png" />
+    <Content Include="WebSite\css\plugins\images\spritemap%402x.png" />
+    <Content Include="WebSite\css\plugins\images\spritemap.png" />
+    <Content Include="WebSite\css\plugins\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="WebSite\css\plugins\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="WebSite\css\plugins\jasny\jasny-bootstrap.min.css" />
+    <Content Include="WebSite\css\plugins\jqgrid\ui.jqgridffe4.css" />
+    <Content Include="WebSite\css\plugins\jsTree\style.min.css" />
+    <Content Include="WebSite\css\plugins\markdown\bootstrap-markdown.min.css" />
+    <Content Include="WebSite\css\plugins\morris\morris-0.4.3.min.css" />
+    <Content Include="WebSite\css\plugins\nouslider\jquery.nouislider.css" />
+    <Content Include="WebSite\css\plugins\plyr\plyr.css" />
+    <Content Include="WebSite\css\plugins\plyr\sprite.svg" />
+    <Content Include="WebSite\css\plugins\simditor\simditor.css" />
+    <Content Include="WebSite\css\plugins\steps\jquery.steps.css" />
+    <Content Include="WebSite\css\plugins\summernote\summernote-bs3.css" />
+    <Content Include="WebSite\css\plugins\summernote\summernote.css" />
+    <Content Include="WebSite\css\plugins\sweetalert\sweetalert.css" />
+    <Content Include="WebSite\css\plugins\switchery\switchery.css" />
+    <Content Include="WebSite\css\plugins\toastr\toastr.min.css" />
+    <Content Include="WebSite\css\plugins\treeview\bootstrap-treeview.css" />
+    <Content Include="WebSite\css\plugins\webuploader\webuploader.css" />
+    <Content Include="WebSite\css\style.min.css" />
+    <Content Include="WebSite\css\style.min862f.css" />
+    <Content Include="WebSite\fonts\fontawesome-webfont93e3.svg" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="WebSite\img\a1.jpg" />
+    <Content Include="WebSite\img\a2.jpg" />
+    <Content Include="WebSite\img\a3.jpg" />
+    <Content Include="WebSite\img\a4.jpg" />
+    <Content Include="WebSite\img\a5.jpg" />
+    <Content Include="WebSite\img\a6.jpg" />
+    <Content Include="WebSite\img\a7.jpg" />
+    <Content Include="WebSite\img\a8.jpg" />
+    <Content Include="WebSite\img\a9.jpg" />
+    <Content Include="WebSite\img\bg.png" />
+    <Content Include="WebSite\img\iconfont-logo.png" />
+    <Content Include="WebSite\img\icons.png" />
+    <Content Include="WebSite\img\index.jpg" />
+    <Content Include="WebSite\img\index_4.jpg" />
+    <Content Include="WebSite\img\loading-upload.gif" />
+    <Content Include="WebSite\img\locked.png" />
+    <Content Include="WebSite\img\login-background.jpg" />
+    <Content Include="WebSite\img\p1.jpg" />
+    <Content Include="WebSite\img\p2.jpg" />
+    <Content Include="WebSite\img\p3.jpg" />
+    <Content Include="WebSite\img\pay.png" />
+    <Content Include="WebSite\img\profile.jpg" />
+    <Content Include="WebSite\img\profile_big.jpg" />
+    <Content Include="WebSite\img\profile_small.jpg" />
+    <Content Include="WebSite\img\progress.png" />
+    <Content Include="WebSite\img\p_big1.jpg" />
+    <Content Include="WebSite\img\p_big2.jpg" />
+    <Content Include="WebSite\img\p_big3.jpg" />
+    <Content Include="WebSite\img\qr_code.png" />
+    <Content Include="WebSite\img\success.png" />
+    <Content Include="WebSite\img\user.png" />
+    <Content Include="WebSite\img\wenku_logo.png" />
+    <Content Include="WebSite\Index.aspx" />
+    <Content Include="WebSite\js\bootstrap.min.js" />
+    <Content Include="WebSite\js\contabs.min.js" />
+    <Content Include="WebSite\js\content.min.js" />
+    <Content Include="WebSite\js\demo\bootstrap-table-demo.min.js" />
+    <Content Include="WebSite\js\demo\echarts-demo.min.js" />
+    <Content Include="WebSite\js\demo\flot-demo.min.js" />
+    <Content Include="WebSite\js\demo\form-advanced-demo.min.js" />
+    <Content Include="WebSite\js\demo\form-validate-demo.min.js" />
+    <Content Include="WebSite\js\demo\layer-demo.min.js" />
+    <Content Include="WebSite\js\demo\morris-demo.min.js" />
+    <Content Include="WebSite\js\demo\peity-demo.min.js" />
+    <Content Include="WebSite\js\demo\rickshaw-demo.min.js" />
+    <Content Include="WebSite\js\demo\sparkline-demo.min.js" />
+    <Content Include="WebSite\js\demo\treeview-demo.min.js" />
+    <Content Include="WebSite\js\demo\webuploader-demo.min.js" />
+    <Content Include="WebSite\js\hplus.min.js" />
+    <Content Include="WebSite\js\jquery-ui-1.10.4.min.js" />
+    <Content Include="WebSite\js\jquery-ui.custom.min.js" />
+    <Content Include="WebSite\js\jquery.min.js" />
+    <Content Include="WebSite\js\plugins\beautifyhtml\beautifyhtml.js" />
+    <Content Include="WebSite\js\plugins\blueimp\jquery.blueimp-gallery.min.js" />
+    <Content Include="WebSite\js\plugins\bootstrap-table\bootstrap-table-mobile.min.js" />
+    <Content Include="WebSite\js\plugins\bootstrap-table\bootstrap-table.min.js" />
+    <Content Include="WebSite\js\plugins\bootstrap-table\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="WebSite\js\plugins\chartJs\Chart.min.js" />
+    <Content Include="WebSite\js\plugins\chosen\chosen.jquery.js" />
+    <Content Include="WebSite\js\plugins\clockpicker\clockpicker.js" />
+    <Content Include="WebSite\js\plugins\codemirror\codemirror.js" />
+    <Content Include="WebSite\js\plugins\codemirror\mode\javascript\javascript.js" />
+    <Content Include="WebSite\js\plugins\colorpicker\bootstrap-colorpicker.min.js" />
+    <Content Include="WebSite\js\plugins\cropper\cropper.min.js" />
+    <Content Include="WebSite\js\plugins\datapicker\bootstrap-datepicker.js" />
+    <Content Include="WebSite\js\plugins\dataTables\dataTables.bootstrap.js" />
+    <Content Include="WebSite\js\plugins\dataTables\jquery.dataTables.js" />
+    <Content Include="WebSite\js\plugins\diff_match_patch\diff_match_patch.js" />
+    <Content Include="WebSite\js\plugins\dropzone\dropzone.js" />
+    <Content Include="WebSite\js\plugins\easypiechart\jquery.easypiechart.js" />
+    <Content Include="WebSite\js\plugins\echarts\echarts-all.js" />
+    <Content Include="WebSite\js\plugins\fancybox\blank.gif" />
+    <Content Include="WebSite\js\plugins\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="WebSite\js\plugins\fancybox\fancybox_loading.gif" />
+    <Content Include="WebSite\js\plugins\fancybox\fancybox_overlay.png" />
+    <Content Include="WebSite\js\plugins\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="WebSite\js\plugins\fancybox\fancybox_sprite.png" />
+    <Content Include="WebSite\js\plugins\fancybox\jquery.fancybox.css" />
+    <Content Include="WebSite\js\plugins\fancybox\jquery.fancybox.js" />
+    <Content Include="WebSite\js\plugins\flot\curvedLines.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.spline.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="WebSite\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="WebSite\js\plugins\footable\footable.all.min.js" />
+    <Content Include="WebSite\js\plugins\fullcalendar\fullcalendar.min.js" />
+    <Content Include="WebSite\js\plugins\gritter\images\gritter-light.png" />
+    <Content Include="WebSite\js\plugins\gritter\images\gritter.png" />
+    <Content Include="WebSite\js\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="WebSite\js\plugins\gritter\jquery.gritter.css" />
+    <Content Include="WebSite\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="WebSite\js\plugins\iCheck\icheck.min.js" />
+    <Content Include="WebSite\js\plugins\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="WebSite\js\plugins\jasny\jasny-bootstrap.min.js" />
+    <Content Include="WebSite\js\plugins\jeditable\jquery.jeditable.js" />
+    <Content Include="WebSite\js\plugins\jqgrid\i18n\grid.locale-cnffe4.js" />
+    <Content Include="WebSite\js\plugins\jqgrid\jquery.jqGrid.minffe4.js" />
+    <Content Include="WebSite\js\plugins\jquery-ui\jquery-ui.min.js" />
+    <Content Include="WebSite\js\plugins\jsKnob\jquery.knob.js" />
+    <Content Include="WebSite\js\plugins\jsTree\jstree.min.js" />
+    <Content Include="WebSite\js\plugins\jvectormap\jquery-jvectormap-1.2.2.min.js" />
+    <Content Include="WebSite\js\plugins\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="WebSite\js\plugins\layer\extend\layer.ext.js" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\demo.html" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\laydate.js" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\need\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\dahong\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\dahong\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\default\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\default\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\molv\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\laydate\skins\molv\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\更新日志.txt" />
+    <Content Include="WebSite\js\plugins\layer\laydate\laydate.js" />
+    <Content Include="WebSite\js\plugins\layer\laydate\need\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\dahong\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\dahong\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\default\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\default\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\molv\icon.png" />
+    <Content Include="WebSite\js\plugins\layer\laydate\skins\molv\laydate.css" />
+    <Content Include="WebSite\js\plugins\layer\layer.min.js" />
+    <Content Include="WebSite\js\plugins\layer\layim\layim.css" />
+    <Content Include="WebSite\js\plugins\layer\layim\layim.js" />
+    <Content Include="WebSite\js\plugins\layer\layim\loading.gif" />
+    <Content Include="WebSite\js\plugins\layer\skin\layer.css" />
+    <Content Include="WebSite\js\plugins\layer\skin\layer.ext.css" />
+    <Content Include="WebSite\js\plugins\layer\skin\moon\style.css" />
+    <Content Include="WebSite\js\plugins\markdown\bootstrap-markdown.js" />
+    <Content Include="WebSite\js\plugins\markdown\bootstrap-markdown.zh.js" />
+    <Content Include="WebSite\js\plugins\markdown\markdown.js" />
+    <Content Include="WebSite\js\plugins\markdown\to-markdown.js" />
+    <Content Include="WebSite\js\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="WebSite\js\plugins\morris\morris.js" />
+    <Content Include="WebSite\js\plugins\morris\raphael-2.1.0.min.js" />
+    <Content Include="WebSite\js\plugins\nestable\jquery.nestable.js" />
+    <Content Include="WebSite\js\plugins\nouslider\jquery.nouislider.min.js" />
+    <Content Include="WebSite\js\plugins\pace\pace.min.js" />
+    <Content Include="WebSite\js\plugins\peity\jquery.peity.min.js" />
+    <Content Include="WebSite\js\plugins\plyr\plyr.js" />
+    <Content Include="WebSite\js\plugins\preetyTextDiff\jquery.pretty-text-diff.min.js" />
+    <Content Include="WebSite\js\plugins\prettyfile\bootstrap-prettyfile.js" />
+    <Content Include="WebSite\js\plugins\rickshaw\rickshaw.min.js" />
+    <Content Include="WebSite\js\plugins\rickshaw\vendor\d3.v3.js" />
+    <Content Include="WebSite\js\plugins\simditor\hotkeys.js" />
+    <Content Include="WebSite\js\plugins\simditor\module.js" />
+    <Content Include="WebSite\js\plugins\simditor\simditor.js" />
+    <Content Include="WebSite\js\plugins\simditor\uploader.js" />
+    <Content Include="WebSite\js\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="WebSite\js\plugins\sparkline\jquery.sparkline.min.js" />
+    <Content Include="WebSite\js\plugins\staps\jquery.steps.min.js" />
+    <Content Include="WebSite\js\plugins\suggest\bootstrap-suggest.min.js" />
+    <Content Include="WebSite\js\plugins\summernote\summernote-zh-CN.js" />
+    <Content Include="WebSite\js\plugins\summernote\summernote.min.js" />
+    <Content Include="WebSite\js\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="WebSite\js\plugins\switchery\switchery.js" />
+    <Content Include="WebSite\js\plugins\toastr\toastr.min.js" />
+    <Content Include="WebSite\js\plugins\treeview\bootstrap-treeview.js" />
+    <Content Include="WebSite\js\plugins\validate\jquery.validate.min.js" />
+    <Content Include="WebSite\js\plugins\validate\messages_zh.min.js" />
+    <Content Include="WebSite\js\plugins\webuploader\index.html" />
+    <Content Include="WebSite\js\plugins\webuploader\webuploader.min.js" />
+    <Content Include="WebSite\js\welcome.min.js" />
+    <Content Include="WebSite\Login.aspx" />
+    <Content Include="WebSite\ManagerIndex.aspx" />
+    <Content Include="WebSite\Managers\ActionResult.aspx" />
+    <Content Include="WebSite\Managers\ArticleDetail.aspx" />
+    <Content Include="WebSite\Managers\ArticleVote.aspx" />
+    <Content Include="WebSite\Managers\Detail.aspx" />
+    <Content Include="WebSite\Managers\PhotographVote.aspx" />
+    <Content Include="WebSite\Managers\PictureVote.aspx" />
+    <Content Include="WebSite\Managers\User.aspx" />
+    <Content Include="WebSite\Managers\VLogDetail.aspx" />
+    <Content Include="WebSite\Managers\VLogVote.aspx" />
+    <Content Include="WebSite\Managers\VoteType.aspx" />
+    <Content Include="WebSite\plugins\fullavatareditor\scripts\fullAvatarEditor.js" />
+    <Content Include="WebSite\plugins\fullavatareditor\scripts\jQuery.Cookie.js" />
+    <Content Include="WebSite\plugins\fullavatareditor\scripts\swfobject.js" />
+    <Content Include="WebSite\plugins\fullavatareditor\scripts\test.js" />
+    <Content Include="WebSite\Register.aspx" />
+    <Content Include="WebSite\Students\Articles.aspx" />
+    <Content Include="WebSite\Students\ArticleDetail.aspx" />
+    <Content Include="WebSite\Students\Detail.aspx" />
+    <Content Include="WebSite\Students\FileUpload.aspx" />
+    <Content Include="WebSite\Students\Manage\Articles.aspx" />
+    <Content Include="WebSite\Students\Manage\Photograph.aspx" />
+    <Content Include="WebSite\Students\Manage\Pictures.aspx" />
+    <Content Include="WebSite\Students\Manage\VLog.aspx" />
+    <Content Include="WebSite\Students\Works\Pictures\112.jpg" />
+    <Content Include="WebSite\Students\Works\Pictures\4.png" />
+    <Content Include="WebSite\Students\Works\Pictures\6.jpg" />
+    <Content Include="WebSite\Students\Works\Pictures\7.jpg" />
+    <Content Include="WebSite\Students\Works\Pictures\8.jpg" />
+    <Content Include="WebSite\Students\Works\Pictures\Admin.png" />
+    <Content Include="WebSite\Students\Works\Pictures\shanghetu.jpg" />
+    <Content Include="WebSite\Students\Works\Videos\1.mp4" />
+    <Content Include="WebSite\Students\PersonalDetail.aspx" />
+    <Content Include="WebSite\Students\Photograph.aspx" />
+    <Content Include="WebSite\Students\Pictures.aspx" />
+    <Content Include="WebSite\Students\VLog.aspx" />
+    <Content Include="WebSite\Students\VLogDetail.aspx" />
+    <Content Include="WebSite\TeacherIndex.aspx" />
+    <Content Include="WebSite\Works\1122.jpg" />
+    <Content Include="WebSite\Works\Pictures\112.jpg" />
+    <Content Include="WebSite\Works\Pictures\4.png" />
+    <Content Include="WebSite\Works\Pictures\6.jpg" />
+    <Content Include="WebSite\Works\Pictures\7.jpg" />
+    <Content Include="WebSite\Works\Pictures\8.jpg" />
+    <Content Include="WebSite\Works\Pictures\Admin.png" />
+    <Content Include="WebSite\Works\Pictures\shanghetu.jpg" />
+    <Content Include="WebSite\Works\Videos\1.mp4" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="WebSite\css\plugins\footable\fonts\footable.eot" />
+    <Content Include="WebSite\css\plugins\footable\fonts\footable.ttf" />
+    <Content Include="WebSite\css\plugins\footable\fonts\footable.woff" />
+    <Content Include="WebSite\css\plugins\footable\fonts\footabled41d.eot" />
+    <Content Include="WebSite\fonts\fontawesome-webfont93e3.eot" />
+    <Content Include="WebSite\fonts\fontawesome-webfont93e3.ttf" />
+    <Content Include="WebSite\fonts\fontawesome-webfont93e3.woff" />
+    <Content Include="WebSite\fonts\fontawesome-webfont93e3.woff2" />
+    <Content Include="WebSite\fonts\fontawesome-webfontd41d.eot" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="WebSite\fonts\glyphicons-halflings-regulard41d.eot" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1.zip" />
+    <Content Include="WebSite\js\plugins\layer\laydate-v1.1\layDate官网.url" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MySqlHelper.cs" />
+    <Compile Include="Services\SQLHelper.cs" />
+    <Compile Include="Services\SQLServices.cs" />
+    <Compile Include="Services\UserInfo.cs" />
+    <Compile Include="Services\Works.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\ManagerIndex.aspx.cs">
+      <DependentUpon>ManagerIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\ManagerIndex.aspx.designer.cs">
+      <DependentUpon>ManagerIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\ActionResult.aspx.cs">
+      <DependentUpon>ActionResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\ActionResult.aspx.designer.cs">
+      <DependentUpon>ActionResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\ArticleDetail.aspx.cs">
+      <DependentUpon>ArticleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\ArticleDetail.aspx.designer.cs">
+      <DependentUpon>ArticleDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\ArticleVote.aspx.cs">
+      <DependentUpon>ArticleVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\ArticleVote.aspx.designer.cs">
+      <DependentUpon>ArticleVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\PhotographVote.aspx.cs">
+      <DependentUpon>PhotographVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\PhotographVote.aspx.designer.cs">
+      <DependentUpon>PhotographVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\PictureVote.aspx.cs">
+      <DependentUpon>PictureVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\PictureVote.aspx.designer.cs">
+      <DependentUpon>PictureVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\User.aspx.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\User.aspx.designer.cs">
+      <DependentUpon>User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\VLogDetail.aspx.cs">
+      <DependentUpon>VLogDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\VLogDetail.aspx.designer.cs">
+      <DependentUpon>VLogDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\VLogVote.aspx.cs">
+      <DependentUpon>VLogVote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\VLogVote.aspx.designer.cs">
+      <DependentUpon>VLogVote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Managers\VoteType.aspx.cs">
+      <DependentUpon>VoteType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Managers\VoteType.aspx.designer.cs">
+      <DependentUpon>VoteType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Articles.aspx.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Articles.aspx.designer.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\ArticleDetail.aspx.cs">
+      <DependentUpon>ArticleDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\ArticleDetail.aspx.designer.cs">
+      <DependentUpon>ArticleDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\FileUpload.aspx.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\FileUpload.aspx.designer.cs">
+      <DependentUpon>FileUpload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Articles.aspx.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Articles.aspx.designer.cs">
+      <DependentUpon>Articles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Photograph.aspx.cs">
+      <DependentUpon>Photograph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Photograph.aspx.designer.cs">
+      <DependentUpon>Photograph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Pictures.aspx.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\Pictures.aspx.designer.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\VLog.aspx.cs">
+      <DependentUpon>VLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Manage\VLog.aspx.designer.cs">
+      <DependentUpon>VLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\PersonalDetail.aspx.cs">
+      <DependentUpon>PersonalDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\PersonalDetail.aspx.designer.cs">
+      <DependentUpon>PersonalDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Photograph.aspx.cs">
+      <DependentUpon>Photograph.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Photograph.aspx.designer.cs">
+      <DependentUpon>Photograph.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\Pictures.aspx.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\Pictures.aspx.designer.cs">
+      <DependentUpon>Pictures.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\VLog.aspx.cs">
+      <DependentUpon>VLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\VLog.aspx.designer.cs">
+      <DependentUpon>VLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\Students\VLogDetail.aspx.cs">
+      <DependentUpon>VLogDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\Students\VLogDetail.aspx.designer.cs">
+      <DependentUpon>VLogDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebSite\TeacherIndex.aspx.cs">
+      <DependentUpon>TeacherIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebSite\TeacherIndex.aspx.designer.cs">
+      <DependentUpon>TeacherIndex.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7817</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7817/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
